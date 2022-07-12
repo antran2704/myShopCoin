@@ -38,7 +38,7 @@ function App() {
           <Navbar />
           {width < 700 && <NavbarMobile />}
           <Routes>
-              <Route path="/" element= {<Home render = {render}/>}/>
+              <Route path="/myShopCoin" element= {<Home render = {render}/>}/>
           </Routes>
           {isLoading && <Loading />}
           {width > 700 && <Footer />}

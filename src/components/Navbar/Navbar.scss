@@ -30,6 +30,7 @@
 }
 .navbar__logo {
   max-width: 160px;
+  cursor: pointer;
 
   @include tablet {
     max-width: 120px;

@@ -29,6 +29,12 @@ function App() {
     setIsLoading(true);
   }
 
+  function handleCheckLocation() {
+    if(window.location.pathname != "/") {
+        window.location.pathname = "/"
+    }
+  }
+
   useEffect(() => {
     const handle = setTimeout(function () {
       getCoinData()
@@ -44,8 +50,8 @@ function App() {
     <LoadingTheme.Provider value={loading}>
       <div className="App">
         <Router>
-          <Navbar />
-          {width < 700 && <NavbarMobile />}
+          <Navbar check = {handleCheckLocation}/>
+          {width < 700 && <NavbarMobile check = {handleCheckLocation}/>}
           <Routes>
               <Route path="/" element= {<Home coins = {coins} render = {render}/>}/>
               <Route path="/my-coin" element= {<MyCoinPage width = {width}/>}/>

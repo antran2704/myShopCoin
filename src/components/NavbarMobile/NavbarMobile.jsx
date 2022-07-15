@@ -5,11 +5,11 @@ import { ImProfile } from "react-icons/im";
 import "./NavbarMobile.scss";
 import { Link } from "react-router-dom";
 
-function NavbarMobile() {
+function NavbarMobile({check}) {
   return (
     <div className="navmobile">
       <ul className="navmobile__list">
-       <a href= "/">
+       <a onClick={check}>
           <li className="navmobile__item">
             <BiStoreAlt className="navmobile__icon" />
             <p className="navmobile__name">Buy Coins</p>

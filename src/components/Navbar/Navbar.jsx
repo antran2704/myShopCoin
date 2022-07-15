@@ -1,14 +1,14 @@
 import "./Navbar.scss";
 import imgs from "../../assets/imgs";
 import { useViewport } from "../hooks/hook";
-function Navbar() {
+function Navbar({check}) {
   const [width] = useViewport();
 
   return (
     <div className="navbar">
       <div className="navbar__container">
         <div className="navbar__wrap">
-          <a href="/" className="navbar__logo">
+          <a onClick={check} className="navbar__logo">
             <img src={imgs.logo} alt="" />
           </a>
           {width > 700 && (

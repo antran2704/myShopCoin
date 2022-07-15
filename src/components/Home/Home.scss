@@ -54,7 +54,6 @@
 
   @include mobile {
     font-size: 1.4rem;
-    max-width: 90px
   }
 }
 
@@ -83,7 +82,6 @@
 }
 
 .home__body-price {
-  color: rgba(220, 38, 38, 1);
 
   @include mobile {
     display: none;

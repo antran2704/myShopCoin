@@ -1,4 +1,4 @@
-import BuyHistory from "../Home/Pages/BuyHistory/BuyHistory";
+import BuyHistory from "../Pages/BuyHistory/BuyHistory";
 import Deposit from "../Pages/Deposit/Deposit";
 import MyCoin from "../Pages/MyCoin/MyCoin";
 import WidthDrawal from "../Pages/WidthDrawal/WidthDrawal";
@@ -11,7 +11,7 @@ const routes = [
     },
     {
         to: "/my-history",
-        component: BuyHistory,
+        component: BuyHistory
     },
     {
         to: "/my-draw",

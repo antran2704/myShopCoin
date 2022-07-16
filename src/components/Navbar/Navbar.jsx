@@ -29,7 +29,7 @@ function Navbar({check}) {
                     </a>
                   </li>
                   <li className="navbar__second-item">
-                    <a href="/my-draw" className="navbar__second-link">
+                    <a href="/my-deposit" className="navbar__second-link">
                       Deposit
                     </a>
                   </li>

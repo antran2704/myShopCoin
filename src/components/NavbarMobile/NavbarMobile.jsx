@@ -1,51 +1,47 @@
-import { BiHistory, BiMoney, BiStoreAlt } from "react-icons/bi";
-import {BsPersonLinesFill} from "react-icons/bs"
-import { RiHandCoinLine } from "react-icons/ri";
-import { ImProfile } from "react-icons/im";
-import "./NavbarMobile.scss";
+import { useEffect, useState } from "react";
+import { BiStoreAlt } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import data from "./index";
+import "./NavbarMobile.scss";
 
-function NavbarMobile({check}) {
+function NavbarMobile({ check }) {
+  const [url, setUrl] = useState(window.location.pathname);
+  function handleUrl(path) {
+    setUrl(path);
+  }
+
+  useEffect(() => {
+    const items = document.querySelectorAll(".navmobile__item");
+    items.forEach((item) => {
+      item.classList.remove("active");
+      if (item.pathname == url) {
+        item.classList.add("active");
+      }
+    });
+  }, [url]);
   return (
     <div className="navmobile">
-      <ul className="navmobile__list">
-       <a onClick={check}>
-          <li className="navmobile__item">
-            <BiStoreAlt className="navmobile__icon" />
-            <p className="navmobile__name">Buy Coins</p>
-          </li>
-       </a>
-        <Link to = "/my-coin">
-          <li className="navmobile__item">
-            <RiHandCoinLine className="navmobile__icon" />
-            <p className="navmobile__name">My Coins</p>
-          </li>
-        </Link>
-        <Link to = "/my-history">
-          <li className="navmobile__item">
-            <BiHistory className="navmobile__icon" />
-            <p className="navmobile__name">History</p>
-          </li>
-        </Link>
-        <Link to = "/my-draw">
-          <li className="navmobile__item">
-            <BiMoney className="navmobile__icon" />
-            <p className="navmobile__name">Deposit</p>
-          </li>
-        </Link>
-       <Link to= "/my-draw">
-          <li className="navmobile__item">
-            <BsPersonLinesFill className="navmobile__icon" />
-            <p className="navmobile__name">Withdraw</p>
-          </li>
-       </Link>
-        <Link to = "/my-coin">
-          <li className="navmobile__item">
-            <ImProfile className="navmobile__icon" />
-            <p className="navmobile__name">My Profile</p>
-          </li>
-        </Link>
-      </ul>
+      <div className="navmobile__list">
+        <a onClick={check} className="navmobile__item">
+          <BiStoreAlt className="navmobile__icon" />
+          <p className="navmobile__name">Buy Coins</p>
+        </a>
+        {data.map((item, index) => {
+          return (
+            <Link
+              key={index}
+              to={item.to}
+              onClick={function () {
+                handleUrl(item.to);
+              }}
+              className="navmobile__item"
+            >
+              <item.icon className="navmobile__icon" />
+              <p className="navmobile__name">{item.title}</p>
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 }

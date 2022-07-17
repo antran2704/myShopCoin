@@ -30,15 +30,16 @@ function Coin({ data }) {
             </p>
           </div>
         </div>
-      ) :
-
-      <div className="coin__footer">
-            <p className="coin__footer-desc">You don't Have any coins</p>
-            <button className="coin__footer-btn">
-                <a href="/" className="coin__footer-link">Buy coins</a>
-            </button>
-      </div>
-    }
+      ) : (
+        <div className="coin__footer">
+          <p className="coin__footer-desc">You don't Have any coins</p>
+        </div>
+      )}
+      <button className="coin__footer-btn">
+        <a href="/" className="coin__footer-link">
+          Buy coins
+        </a>
+      </button>
     </div>
   );
 }

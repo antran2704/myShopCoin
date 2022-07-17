@@ -41,7 +41,6 @@ function App() {
 
   function getInforCoin(data) {
     setInforCoin(data)
-    console.log(data)
   }
 
   useEffect(() => {

@@ -1,8 +1,7 @@
-import { scrollToTop, useScrollToTop } from "../hooks/hook";
 import { BsArrowUpCircle } from "react-icons/bs";
+import { scrollToTop, useScrollToTop } from "../hooks/hook";
 
 import "./Home.scss";
-import data from "./index";
 
 function Home({ render, coins }) {
   const [top] = useScrollToTop();
@@ -24,16 +23,29 @@ function Home({ render, coins }) {
                   <li className="home__body-item">
                     <div className="home__body-header">
                       <img src={coin.image} alt="" />
-                      <p className="home__body-name">{coin.name}</p>
+                      <div className="home__name-wrap">
+                        <p className="home__body-name">
+                          {coin.symbol.toUpperCase()}
+                          <span>/ {coin.name}</span>
+                        </p>
+                        <p
+                          className={`${
+                            coin.price_change_percentage_24h > 0
+                              ? "text-succes"
+                              : "text-danger"
+                          } home__name-price`}
+                        >
+                          {coin.price_change_percentage_24h}
+                        </p>
+                      </div>
                     </div>
                   </li>
                   <li
-                    className={
-                      `${coin.price_change_percentage_24h > 0
+                    className={`${
+                      coin.price_change_percentage_24h > 0
                         ? "text-succes"
                         : "text-danger"
-                      } home__body-item home__body-price`
-                    }
+                    } home__body-item home__body-price`}
                   >
                     {coin.price_change_percentage_24h}
                   </li>

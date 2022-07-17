@@ -1,4 +1,3 @@
-import "./Deposit.scss";
 
 function Deposit() {
   return (

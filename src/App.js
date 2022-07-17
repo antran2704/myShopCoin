@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useViewport } from "./components/hooks/hook";
 
 import "./App.scss";
-import routes from "./components/routes";
 import CopyRight from "./components/CopyRight/CopyRight";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
@@ -12,6 +11,7 @@ import Loading from "./components/Loading/Loading";
 import Navbar from "./components/Navbar/Navbar";
 import NavbarMobile from "./components/NavbarMobile/NavbarMobile";
 import DefaultLayout from "./components/Pages/DefaultLayout/DefaultLayout";
+import routes from "./components/routes";
 
 export const LoadingTheme = createContext();
 
@@ -63,7 +63,7 @@ function App() {
                   key={index}
                   path={route.to}
                   element={
-                    <DefaultLayout>
+                    <DefaultLayout width = {width}>
                       <route.component />
                     </DefaultLayout>
                   }

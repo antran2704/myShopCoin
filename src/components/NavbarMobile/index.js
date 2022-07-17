@@ -1,7 +1,7 @@
-import { BiHistory, BiMoney, BiStoreAlt } from "react-icons/bi";
-import {BsPersonLinesFill} from "react-icons/bs"
-import { RiHandCoinLine } from "react-icons/ri";
+import { BiHistory, BiMoney } from "react-icons/bi";
+import { BsPersonLinesFill } from "react-icons/bs";
 import { ImProfile } from "react-icons/im";
+import { RiHandCoinLine } from "react-icons/ri";
 
 
 const data = [
@@ -26,7 +26,7 @@ const data = [
         icon: BsPersonLinesFill
     },
     {
-        to: "/my-coin",
+        to: "/my-profile",
         title: "My Profile",
         icon: ImProfile
     }

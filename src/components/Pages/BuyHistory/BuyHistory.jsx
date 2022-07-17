@@ -1,4 +1,3 @@
-import "./BuyHistory.scss";
 
 function BuyHistory() {
   return (

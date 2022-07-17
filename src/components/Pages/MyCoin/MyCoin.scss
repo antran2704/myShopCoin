@@ -3,6 +3,7 @@
     width: 100%;
     border: 1px solid rgba(229, 231, 235, 1);
     padding: 30px;
+    margin-top: 30px;
 }
 
 .mycoin__header {
@@ -12,4 +13,14 @@
 .mycoin__content {
     font-size: 1.6rem;
     margin-top: 10px;
+}
+
+.mycoin__btn {
+    display: inline-block;
+    padding: 10px;
+    font-size: 1.6rem;
+    margin: 16px 0;
+    background-color: rgb(245, 158, 11);
+    border-radius: 8px;
+    cursor: pointer;
 }

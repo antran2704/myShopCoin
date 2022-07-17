@@ -1,6 +1,7 @@
-import "./Navbar.scss";
+import { Link } from "react-router-dom";
 import imgs from "../../assets/imgs";
 import { useViewport } from "../hooks/hook";
+import "./Navbar.scss";
 function Navbar({check}) {
   const [width] = useViewport();
 
@@ -19,34 +20,34 @@ function Navbar({check}) {
                 </a>
                 <ul className="navbar__menu-second">
                   <li className="navbar__second-item">
-                    <a href="/my-coin" className="navbar__second-link">
+                    <a href="/my-profile" className="navbar__second-link">
                       Dashboard
                     </a>
                   </li>
                   <li className="navbar__second-item">
-                    <a href="/my-coin" className="navbar__second-link">
+                    <Link to="/my-coin" className="navbar__second-link">
                       My Coins
-                    </a>
+                    </Link>
                   </li>
                   <li className="navbar__second-item">
-                    <a href="/my-deposit" className="navbar__second-link">
+                    <Link to="/my-deposit" className="navbar__second-link">
                       Deposit
-                    </a>
+                    </Link>
                   </li>
                   <li className="navbar__second-item">
-                    <a href="/my-draw" className="navbar__second-link">
+                    <Link to="/my-draw" className="navbar__second-link">
                       Withdraw
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>
               <li className="navbar__menu-item">
-                <a href="" className="navbar__menu-link">
+                <a href="/" className="navbar__menu-link">
                   Partner
                 </a>
               </li>
               <li className="navbar__menu-item">
-                <a href="" className="navbar__menu-link">
+                <a href="/" className="navbar__menu-link">
                   Contact
                 </a>
               </li>

@@ -1,4 +1,3 @@
-import "./WidthDrawal.scss";
 
 function WidthDrawal() {
   return (

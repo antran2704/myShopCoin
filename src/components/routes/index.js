@@ -1,4 +1,5 @@
 import BuyHistory from "../Pages/BuyHistory/BuyHistory";
+import Coin from "../Pages/Coins/Coins";
 import Deposit from "../Pages/Deposit/Deposit";
 import MyCoin from "../Pages/MyCoin/MyCoin";
 import MyProfile from "../Pages/MyProfile/MyProfile";
@@ -25,6 +26,10 @@ const routes = [
     {
         to: "/my-profile",
         component: MyProfile,
+    },
+    {
+        to: "/coin",
+        component: Coin,
     },
 ]
 

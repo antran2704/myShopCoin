@@ -1,0 +1,81 @@
+@import "../../../variable.scss";
+
+.coin {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 260px;
+    width: 100%;
+    border: 1px solid rgba(229, 231, 235, 1);
+    padding: 30px;
+    font-size: 1.6rem;
+}
+
+.coin__header {
+    
+}
+.coin__wrap {
+    max-width: 54%;
+    background-color: rgb(243, 244, 246);
+    padding: 16px 30px;
+
+    @include tablet {
+        max-width: 80%;
+    }
+
+    @include mobile {
+        max-width: 100%;
+    }
+}
+.coin__infor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #dadada;
+}
+
+.coin__img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+.coin__title {
+    font-size: 1.5rem;
+}
+.coin__content {
+    font-size: 1.5rem;
+    
+}
+
+.coin__symbol {
+    padding: 4px;
+    background-color: rgba(16, 185, 129, 1);
+    border-radius: 6px;
+}
+
+.coin__footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.coin__footer-desc {
+    margin: 10px 0;
+}
+.coin__footer-btn {
+    border-radius: 8px;
+    overflow: hidden;
+
+    width: 20%;
+
+    @include tablet {
+        width: 100%;
+    }
+}
+.coin__footer-link {
+    font-size: 1.6rem;
+    padding: 20px;
+    color: white;
+    background-color: rgba(16, 185, 129, 1);
+}

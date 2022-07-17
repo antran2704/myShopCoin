@@ -20,6 +20,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [render, setRender] = useState(true);
   const [coins, setCoins] = useState([]);
+  const [inforCoin, setInforCoin] = useState();
   const getCoinData = async () => {
     const res = await axios.get(
       "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
@@ -36,6 +37,11 @@ function App() {
     if (window.location.pathname != "/") {
       window.location.pathname = "/";
     }
+  }
+
+  function getInforCoin(data) {
+    setInforCoin(data)
+    console.log(data)
   }
 
   useEffect(() => {
@@ -56,7 +62,7 @@ function App() {
           <Navbar check={handleCheckLocation} />
           {width < 700 && <NavbarMobile check={handleCheckLocation} />}
           <Routes>
-            <Route path="/" element={<Home coins={coins} render={render} />} />
+            <Route path="/" element={<Home data = {getInforCoin} coins={coins} render={render} />} />
             {routes.map((route, index) => {
               return (
                 <Route
@@ -64,7 +70,7 @@ function App() {
                   path={route.to}
                   element={
                     <DefaultLayout width = {width}>
-                      <route.component />
+                      <route.component data={inforCoin}/>
                     </DefaultLayout>
                   }
                 />

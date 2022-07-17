@@ -1,10 +1,15 @@
+import { useContext } from "react";
 import { BsArrowUpCircle } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { LoadingTheme } from "../../App";
 import { scrollToTop, useScrollToTop } from "../hooks/hook";
 
 import "./Home.scss";
 
-function Home({ render, coins }) {
+function Home({ render, coins, data }) {
   const [top] = useScrollToTop();
+  const loading = useContext(LoadingTheme)
+
   return (
     <div className="home">
       <h2 className="home__title">MARKET TREND</h2>
@@ -53,9 +58,16 @@ function Home({ render, coins }) {
                     {Number(coin.high_24h).toFixed(2)}/
                     {Number(coin.low_24h).toFixed(2)}
                   </li>
-                  <li className="home__body-item home__body-btn">
+                  <Link
+                    onClick={() => {
+                      loading()
+                      data(coin);
+                    }}
+                    to="/coin"
+                    className="home__body-item home__body-btn"
+                  >
                     <button>Buy</button>
-                  </li>
+                  </Link>
                 </div>
               );
             })}

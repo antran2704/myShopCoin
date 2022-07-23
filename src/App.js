@@ -28,7 +28,6 @@ function App() {
     setCoins(res.data);
     setIsLoading(false);
   };
-
   function loading() {
     setIsLoading(true);
   }

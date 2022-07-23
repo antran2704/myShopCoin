@@ -63,7 +63,7 @@ button {
 .scroll-top {
   font-size: 4rem;
   position: fixed;
-  bottom: 60px;
+  bottom: 30px;
   right: 20px;
   cursor: pointer;
   transition: all ease 0.2s;
@@ -76,39 +76,58 @@ button {
   &.show {
     opacity: 1;
     animation: appear linear 0.6s forwards;
+
+    & {
+      @include tablet {
+        animation: appearOnMobile linear 0.6s forwards;
+      }
+
+      @include mobile {
+        animation: appearOnMobile linear 0.6s forwards;
+      }
+    }
   }
 
   &.hidden {
     bottom: -4px;
     animation: disappear linear 0.6s forwards;
+
+    & {
+      @include tablet {
+        animation: disappearOnMobile linear 0.6s forwards;
+      }
+
+      @include mobile {
+        animation: disappearOnMobile linear 0.6s forwards;
+      }
+    }
   }
 
   @include tablet {
     right: 20px;
-    bottom: 60px;
-
+    bottom: 70px;
   }
 
   @include mobile {
     right: 10px;
-    bottom: 60px;
+    bottom: 70px;
   }
 }
 
 @keyframes disappear {
   0% {
-    bottom: 60px;
+    bottom: 30px;
     opacity: 1;
   }
   25% {
-    bottom: 66px;
+    bottom: 40px;
   }
   50% {
-    bottom: 62px;
+    bottom: 36px;
     opacity: 0.6;
   }
   75% {
-    bottom: 50px;
+    bottom: 32px;
     opacity: 0, 4;
   }
   100% {
@@ -117,13 +136,52 @@ button {
   }
 }
 
+
 @keyframes appear {
   0% {
     bottom: -10px;
     opacity: 0;
   }
   50% {
-    bottom: 66px;
+    bottom: 40px;
+    opacity: 0, 4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// animation on Tablet&&Mobile
+
+@keyframes disappearOnMobile {
+  0% {
+    bottom: 70px;
+    opacity: 1;
+  }
+  25% {
+    bottom: 80px;
+  }
+  50% {
+    bottom: 76px;
+    opacity: 0.6;
+  }
+  75% {
+    bottom: 72px;
+    opacity: 0, 4;
+  }
+  100% {
+    bottom: -10px;
+    opacity: 0;
+  }
+}
+
+@keyframes appearOnMobile {
+  0% {
+    bottom: -10px;
+    opacity: 0;
+  }
+  50% {
+    bottom: 80px;
     opacity: 0, 4;
   }
   100% {
